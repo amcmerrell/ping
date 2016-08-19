@@ -35,12 +35,16 @@ h3 {
   background-size: cover;
   width: 100%;
   height: 150px;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .main-content {
   background: #E6E6E6;
   height: auto;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 5vh;
+  border-top: 3px dashed #e78838;
+  box-shadow: 10px 10px 5px #888888;
 }
 
 .results {
