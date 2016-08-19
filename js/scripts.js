@@ -1,8 +1,16 @@
-function isValid(input) {
-  var value = parseFloat(input);
-  if (isNaN(value) === true || value <= 0) {
+function isValid(maxValue) {
+  maxValue = parseInt(maxValue);
+  if (isNaN(maxValue) === true || maxValue <= 0) {
     return false;
   } else {
-    return true;
+    return maxValue; // Input converted from string to number.
+  }
+}
+
+var numberArray = [];
+function countUp(maxValue) {
+  for (i = 1; i <= maxValue; i++) {
+    var number = i;
+    numberArray.push(number);
   }
 }
