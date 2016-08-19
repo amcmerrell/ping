@@ -24,3 +24,12 @@ function replaceThree(numberArray) {
   }
   return numberArray;
 }
+
+function replaceFive(numberArray) {
+  for (i = 0; i < numberArray.length; i++) {
+    if (numberArray[i] % 5 === 0) {
+      numberArray.splice(i, 1, "pong");
+    }
+  }
+  return numberArray;
+}
