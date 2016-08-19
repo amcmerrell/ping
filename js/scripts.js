@@ -1,3 +1,4 @@
+// Begin Business Logic
 function isValid(maxValue) {
   maxValue = parseInt(maxValue);
   if (isNaN(maxValue) === true || maxValue <= 0) {
@@ -9,11 +10,10 @@ function isValid(maxValue) {
 
 var numberArray = [];
 function countUp(maxValue) {
-  for (i = 1; i <= maxValue; i++) {
-    var number = i;
-    numberArray.push(number);
+  for (n = 1; n <= maxValue; n++) {
+    numberArray.push(n);
   }
-  return numberArray
+  return numberArray; // Output is now an array.
 }
 
 function replaceNumbers(numberArray) {
@@ -27,8 +27,13 @@ function replaceNumbers(numberArray) {
       }
     }
   }
-  return numberArray;
+  return numberArray; // Output now includes numbers and strings.
 }
+
+// Begin UI Logic
+$(document).ready(function() {
+  
+});
 
 // These functions have been replaced by refactored version
 // function replaceThree(numberArray) {
