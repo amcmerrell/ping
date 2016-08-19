@@ -1,7 +1,6 @@
 // Begin Business Logic
-var number = "";
-function isValid(number) {
-  number = parseInt(number);
+function isValid(entry) {
+  number = parseInt(entry);
   if (isNaN(number) === true || number <= 0) {
     return false;
   } else {
@@ -9,7 +8,6 @@ function isValid(number) {
   }
 }
 
-var numberArray = [];
 function countUp(number) {
   for (n = 1; n <= number; n++) {
     numberArray.push(n);
@@ -31,7 +29,8 @@ function replaceNumbers(numberArray) {
   return numberArray; // Output now includes numbers and strings.
 }
 
-function pingPong(number) {
+function pingPong(entry) {
+  numberArray = [];
   countUp(number);
   numberArray = replaceNumbers(numberArray);
 }
@@ -39,38 +38,20 @@ function pingPong(number) {
 // Begin UI Logic
 $(document).ready(function() {
   $("form").submit(function(event) {
-    number = $("input#value").val();
-
-    if (!isValid(number)) {
-      alert("Not valid!");
-    } else {
-      $("#results").text("")
-      numberArray = [];
-      pingPong(number);
-      numberArray.forEach(function(entry) {
-        $("ul").append("<li>" + entry + "</li>")
+    entry = $("input#value").val();
+    function showResults(elements) {
+      $("#results").text("");
+      elements.forEach(function(element) {
+        $("ul").append("<li>" + element + "</li>")
       });
     }
 
+    if (!isValid(entry)) {
+      alert("Not valid!");
+    } else {
+      pingPong(entry);
+      showResults(numberArray);
+    }
     event.preventDefault();
   });
 });
-
-// These functions have been replaced by refactored version
-// function replaceThree(numberArray) {
-//   for (i = 0; i < numberArray.length; i++) {
-//     if (numberArray[i] % 3 === 0) {
-//       numberArray.splice(i, 1, "ping");
-//     }
-//   }
-//   return numberArray;
-// }
-//
-// function replaceFive(numberArray) {
-//   for (i = 0; i < numberArray.length; i++) {
-//     if (numberArray[i] % 5 === 0) {
-//       numberArray.splice(i, 1, "pong");
-//     }
-//   }
-//   return numberArray;
-// }
