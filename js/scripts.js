@@ -1,16 +1,17 @@
 // Begin Business Logic
-function isValid(maxValue) {
-  maxValue = parseInt(maxValue);
-  if (isNaN(maxValue) === true || maxValue <= 0) {
+var number = "";
+function isValid(number) {
+  number = parseInt(number);
+  if (isNaN(number) === true || number <= 0) {
     return false;
   } else {
-    return maxValue; // Input converted from string to number.
+    return number; // Input converted from string to number.
   }
 }
 
 var numberArray = [];
-function countUp(maxValue) {
-  for (n = 1; n <= maxValue; n++) {
+function countUp(number) {
+  for (n = 1; n <= number; n++) {
     numberArray.push(n);
   }
   return numberArray; // Output is now an array.
@@ -30,9 +31,29 @@ function replaceNumbers(numberArray) {
   return numberArray; // Output now includes numbers and strings.
 }
 
+function pingPong(number) {
+  countUp(number);
+  numberArray = replaceNumbers(numberArray);
+}
+
 // Begin UI Logic
 $(document).ready(function() {
-  
+  $("form").submit(function(event) {
+    number = $("input#value").val();
+
+    if (!isValid(number)) {
+      alert("Not valid!");
+    } else {
+      $("#results").text("")
+      numberArray = [];
+      pingPong(number);
+      numberArray.forEach(function(entry) {
+        $("ul").append("<li>" + entry + "</li>")
+      });
+    }
+
+    event.preventDefault();
+  });
 });
 
 // These functions have been replaced by refactored version
