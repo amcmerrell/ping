@@ -40,8 +40,9 @@ $(document).ready(function() {
   $("form").submit(function(event) {
     entry = $("input#value").val();
     function showResults(elements) {
-      $("#results").text("");
+      $("ul").text("");
       $(".error").hide();
+      $(".results").fadeIn(2000);
       elements.forEach(function(element) {
         $("ul").append("<li>" + element + "</li>")
       });

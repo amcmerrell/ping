@@ -15,6 +15,12 @@ h2 {
   color: #f84043;
 }
 
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #e78838;
+  text-decoration: underline;
+}
+
 .container {
   height: 100%;
 }
@@ -34,6 +40,11 @@ h2 {
 .main-content {
   background: #E6E6E6;
   height: auto;
+  padding-bottom: 30px;
+}
+
+.results {
+  display: none;
 }
 
 .error {
