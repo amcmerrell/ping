@@ -13,4 +13,14 @@ function countUp(maxValue) {
     var number = i;
     numberArray.push(number);
   }
+  return numberArray
+}
+
+function replaceThree(numberArray) {
+  for (i = 0; i < numberArray.length; i++) {
+    if (numberArray[i] % 3 === 0) {
+      numberArray.splice(i, 1, "ping");
+    }
+  }
+  return numberArray;
 }
