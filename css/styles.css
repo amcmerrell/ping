@@ -9,6 +9,12 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #f84043;
+}
+
 .container {
   height: 100%;
 }
@@ -27,6 +33,11 @@ h1 {
 
 .main-content {
   background: #E6E6E6;
-  height: 100%;
+  height: auto;
+}
 
+.error {
+  display: none;
+  font-weight: bolder;
+  color: #f84043;
 }

@@ -41,13 +41,14 @@ $(document).ready(function() {
     entry = $("input#value").val();
     function showResults(elements) {
       $("#results").text("");
+      $(".error").hide();
       elements.forEach(function(element) {
         $("ul").append("<li>" + element + "</li>")
       });
     }
 
     if (!isValid(entry)) {
-      alert("Not valid!");
+      $(".error").slideDown();
     } else {
       pingPong(entry);
       showResults(numberArray);
