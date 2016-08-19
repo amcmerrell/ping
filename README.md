@@ -24,6 +24,10 @@ _When non-numerical values are submitted, it returns an error._
 * _Example Input: "Hello"_
 * _Example Output: "Please only enter numbers."_
 
+_When values less than 1 are submitted, it returns an error._
+* _Example Input: -1_
+* _Example Output: "Please only enter numbers above 0."_
+
 _It can count up to the user-provided number by 1._
 * _Example Input: 2_
 * _Example Output: [1,2]_
@@ -39,6 +43,13 @@ _Numbers divisible by 5 are replaced by "pong"._
 _Numbers divisible by 15 are replaced by "ping-pong"._
 * _Example Input: 30_
 * _Example Output: "ping-pong"_
+
+_Results of entry are displayed to the user._
+* _Example Input: 30_
+* _Example Output: "Here are your results: 1, 2, ping..."_
+
+_User can submit a new value and get new results._
+
 
 ## Known Bugs
 

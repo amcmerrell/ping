@@ -44,7 +44,7 @@ $(document).ready(function() {
       $(".error").hide();
       $(".results").fadeIn(2000);
       elements.forEach(function(element) {
-        $("ul").append("<li>" + element + "</li>")
+        $("ul").append("<li>" + element + "</li>");
       });
     }
 
